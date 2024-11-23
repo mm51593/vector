@@ -25,3 +25,6 @@ add_test(NAME TestGet COMMAND test_get)
 
 add_executable(test_remove "tests/test_remove.c")
 add_test(NAME TestRemove COMMAND test_remove)
+
+add_executable(test_pop_front "tests/test_pop_front.c")
+add_test(NAME TestPopFront COMMAND test_pop_front)

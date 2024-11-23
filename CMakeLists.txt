@@ -13,3 +13,6 @@ add_test(NAME TestConstructor COMMAND test_constructor)
 
 add_executable(test_insert "tests/test_insert.c")
 add_test(NAME TestInsert COMMAND test_insert)
+
+add_executable(test_push_front "tests/test_push_front.c")
+add_test(NAME TestPushFront COMMAND test_push_front)

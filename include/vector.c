@@ -9,8 +9,8 @@
 #define INITIAL_CAPACITY 4
 
 #ifndef VECTOR_ITEM_T
-#error "VECTOR_ITEM_T undefined"
-#else
+#define VECTOR_ITEM_T size_t
+#endif
 
 #define VECTOR_CONCAT(tag, base) tag ## _ ## base
 #define VECTOR_CONCAT2(tag, base) VECTOR_CONCAT(tag, base)
@@ -60,4 +60,6 @@ int VECTOR_METHOD(insert)(struct VECTOR_T *vec, VECTOR_ITEM_T element, size_t in
 	return 0;
 }
 
-#endif
+int VECTOR_METHOD(push_front)(struct VECTOR_T *vec, VECTOR_ITEM_T element) {
+	return VECTOR_METHOD(insert)(vec, element, 0);
+}

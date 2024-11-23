@@ -7,6 +7,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include_directories(.)
 
 enable_testing()
+
 add_executable(test_constructor "tests/test_constructor.c")
 add_test(NAME TestConstructor COMMAND test_constructor)
 
+add_executable(test_insert "tests/test_insert.c")
+add_test(NAME TestInsert COMMAND test_insert)

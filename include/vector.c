@@ -34,4 +34,30 @@ struct VECTOR_T VECTOR_METHOD(construct)() {
 	return vec;
 }
 
+void VECTOR_METHOD(increment_length)(struct VECTOR_T *vec) {
+	if (vec->length >= vec->capacity) {
+		vec->data = realloc(vec->data, vec->capacity * 2);
+		vec->capacity *= 2;
+	}
+	if (!vec->data) {
+		return;
+	}
+	vec->length += 1;
+}
+
+int VECTOR_METHOD(insert)(struct VECTOR_T *vec, VECTOR_ITEM_T element, size_t index) {
+	if (index > vec->length + 1) {
+		return -1;
+	}	
+	VECTOR_METHOD(increment_length)(vec);
+	
+	for (size_t i = vec->length + 1; i > index; i--) {
+		vec->data[i] = vec->data[i - 1];
+	}
+
+	vec->data[index] = element;
+
+	return 0;
+}
+
 #endif

@@ -46,7 +46,7 @@ void VECTOR_METHOD(increment_length)(struct VECTOR_T *vec) {
 }
 
 int VECTOR_METHOD(insert)(struct VECTOR_T *vec, VECTOR_ITEM_T element, size_t index) {
-	if (index > vec->length + 1) {
+	if (index > vec->length) {
 		return -1;
 	}	
 	VECTOR_METHOD(increment_length)(vec);
@@ -62,4 +62,8 @@ int VECTOR_METHOD(insert)(struct VECTOR_T *vec, VECTOR_ITEM_T element, size_t in
 
 int VECTOR_METHOD(push_front)(struct VECTOR_T *vec, VECTOR_ITEM_T element) {
 	return VECTOR_METHOD(insert)(vec, element, 0);
+}
+
+int VECTOR_METHOD(push_back)(struct VECTOR_T *vec, VECTOR_ITEM_T element) {
+	return VECTOR_METHOD(insert)(vec, element, vec->length);
 }

@@ -22,3 +22,6 @@ add_test(NAME TestPushBack COMMAND test_push_back)
 
 add_executable(test_get "tests/test_get.c")
 add_test(NAME TestGet COMMAND test_get)
+
+add_executable(test_remove "tests/test_remove.c")
+add_test(NAME TestRemove COMMAND test_remove)

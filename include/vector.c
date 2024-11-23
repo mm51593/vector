@@ -71,3 +71,19 @@ int VECTOR_METHOD(push_back)(struct VECTOR_T *vec, VECTOR_ITEM_T element) {
 int VECTOR_METHOD(get)(const struct VECTOR_T *vec, size_t index) {
 	return vec->data[index];
 }
+
+VECTOR_ITEM_T VECTOR_METHOD(remove)(struct VECTOR_T *vec, size_t index) {
+	if (index >= vec->length) {
+		return vec->data[0];
+	}
+
+	VECTOR_ITEM_T retval = vec->data[index];
+
+	for (size_t i = index + 1; i < vec->length; i++) {
+		vec->data[i - 1] = vec->data[i];
+	}
+
+	vec->length -= 1;
+
+	return retval;
+}

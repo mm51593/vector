@@ -91,3 +91,7 @@ VECTOR_ITEM_T VECTOR_METHOD(remove)(struct VECTOR_T *vec, size_t index) {
 VECTOR_ITEM_T VECTOR_METHOD(pop_front)(struct VECTOR_T *vec) {
 	return VECTOR_METHOD(remove)(vec, 0);
 }
+
+VECTOR_ITEM_T VECTOR_METHOD(pop_back)(struct VECTOR_T *vec) {
+	return VECTOR_METHOD(remove)(vec, vec->length - 1);
+}

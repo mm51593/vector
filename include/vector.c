@@ -95,3 +95,15 @@ VECTOR_ITEM_T VECTOR_METHOD(pop_front)(struct VECTOR_T *vec) {
 VECTOR_ITEM_T VECTOR_METHOD(pop_back)(struct VECTOR_T *vec) {
 	return VECTOR_METHOD(remove)(vec, vec->length - 1);
 }
+
+size_t VECTOR_METHOD(get_length)(struct VECTOR_T *vec) {
+	return vec->length;
+}
+
+size_t VECTOR_METHOD(get_capacity)(struct VECTOR_T *vec) {
+	return vec->capacity;
+}
+
+VECTOR_ITEM_T *VECTOR_METHOD(get_data)(struct VECTOR_T *vec) {
+	return vec->data;
+}

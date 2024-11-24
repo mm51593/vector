@@ -68,7 +68,7 @@ int VECTOR_METHOD(push_back)(struct VECTOR_T *vec, VECTOR_ITEM_T element) {
 	return VECTOR_METHOD(insert)(vec, element, vec->length);
 }
 
-int VECTOR_METHOD(get)(const struct VECTOR_T *vec, size_t index) {
+VECTOR_ITEM_T VECTOR_METHOD(get)(const struct VECTOR_T *vec, size_t index) {
 	return vec->data[index];
 }
 

@@ -1,6 +1,7 @@
 #include <assert.h>
 
 #define VECTOR_ITEM_T int
+#define VECTOR_TAG int
 #include "include/vector.c"
 
 int main() {

@@ -8,13 +8,13 @@
 
 #define INITIAL_CAPACITY 4
 
-#ifndef VECTOR_ITEM_T
-#define VECTOR_ITEM_T size_t
+#if !defined(VECTOR_ITEM_T) || !defined(VECTOR_TAG)
+#error "VECTOR_ITEM_T And VECTOR_TAG not defined"
 #endif
 
 #define VECTOR_CONCAT(tag, base) tag ## _ ## base
 #define VECTOR_CONCAT2(tag, base) VECTOR_CONCAT(tag, base)
-#define VECTOR_T VECTOR_CONCAT2(VECTOR_ITEM_T, vector)
+#define VECTOR_T VECTOR_CONCAT2(VECTOR_TAG, vector)
 #define VECTOR_METHOD(method) VECTOR_CONCAT2(VECTOR_T, method)
 
 

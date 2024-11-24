@@ -1,9 +1,11 @@
 #include <assert.h>
 
 #define VECTOR_ITEM_T int
+#define VECTOR_TAG int
 #include "include/vector.c"
 
 #define VECTOR_ITEM_T long
+#define VECTOR_TAG long
 #include "include/vector.c"
 
 

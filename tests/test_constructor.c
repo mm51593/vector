@@ -8,6 +8,10 @@
 #define VECTOR_TAG long
 #include "include/vector.c"
 
+#define VECTOR_ITEM_T int*
+#define VECTOR_TAG int_p
+#include "include/vector.c"
+
 
 int main() {
 	struct int_vector ivec = int_vector_construct();
@@ -19,4 +23,9 @@ int main() {
 
 	assert(lvec.length == 0);
 	assert(lvec.capacity == 4);
+
+	struct int_p_vector ipvec = int_p_vector_construct();
+
+	assert(ipvec.length == 0);
+	assert(ipvec.capacity == 4);
 }

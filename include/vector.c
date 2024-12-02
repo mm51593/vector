@@ -36,7 +36,7 @@ struct VECTOR_T VECTOR_METHOD(construct)() {
 
 void VECTOR_METHOD(increment_length)(struct VECTOR_T *vec) {
 	if (vec->length >= vec->capacity) {
-		vec->data = realloc(vec->data, vec->capacity * 2);
+		vec->data = realloc(vec->data, vec->capacity * 2 * sizeof(VECTOR_ITEM_T));
 		vec->capacity *= 2;
 	}
 	if (!vec->data) {

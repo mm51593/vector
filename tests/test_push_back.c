@@ -6,7 +6,6 @@
 
 int main() {
 	struct int_vector ivec = int_vector_construct();
-	struct int_vector ivec2 = int_vector_construct();
 	int retval;
 
 	assert(ivec.length == 0);
@@ -16,12 +15,6 @@ int main() {
 	assert(ivec.length == 1);
 	assert(ivec.capacity == 4);
 	assert(ivec.data[0] == 0);
-	assert(retval == 0);
-
-	retval = int_vector_push_back(&ivec2, 0);
-	assert(ivec2.length == 1);
-	assert(ivec2.capacity == 4);
-	assert(ivec2.data[0] == 0);
 	assert(retval == 0);
 
 	retval = int_vector_push_back(&ivec, 1);
@@ -46,11 +39,6 @@ int main() {
 	assert(ivec.length == 5);
 	assert(ivec.capacity == 8);
 	assert(ivec.data[4] == 4);
-	assert(retval == 0);
-
-	assert(ivec2.length == 1);
-	assert(ivec2.capacity == 4);
-	assert(ivec2.data[0] == 0);
 	assert(retval == 0);
 
 	retval = int_vector_push_back(&ivec, 5);

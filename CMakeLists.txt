@@ -31,3 +31,6 @@ add_test(NAME TestPopFront COMMAND test_pop_front)
 
 add_executable(test_getters "tests/test_getters.c")
 add_test(NAME TestGetters COMMAND test_getters)
+
+add_executable(test_multiple_alloc "tests/test_multiple_allocation.c")
+add_test(NAME TestMultAlloc COMMAND test_multiple_alloc)

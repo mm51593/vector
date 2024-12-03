@@ -51,7 +51,7 @@ int VECTOR_METHOD(insert)(struct VECTOR_T *vec, VECTOR_ITEM_T element, size_t in
 	}	
 	VECTOR_METHOD(increment_length)(vec);
 	
-	for (size_t i = vec->length + 1; i > index; i--) {
+	for (size_t i = vec->length - 1; i > index; i--) {
 		vec->data[i] = vec->data[i - 1];
 	}
 
